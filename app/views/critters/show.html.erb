@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @critter.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @critter.city %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @critter.color %>
+</p>
+
+<%= link_to 'Edit', edit_critter_path(@critter) %> |
+<%= link_to 'Back', critters_path %>

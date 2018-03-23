@@ -1,0 +1,2 @@
+class Critter < ApplicationRecord
+end
