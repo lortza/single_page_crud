@@ -1,0 +1,6 @@
+<tr>
+  <td><h4><%= critter.name %></h4></td>
+  <td><%= display_description(critter) %></td>
+  <td><%= link_to 'Edit', edit_critter_path(critter), remote: true %></td>
+  <td><%= link_to 'Destroy', critter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

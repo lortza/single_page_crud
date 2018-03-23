@@ -1,44 +1,27 @@
 class CrittersController < ApplicationController
   before_action :set_critter, only: [:show, :edit, :update, :destroy]
 
-  # GET /critters
-  # GET /critters.json
   def index
-    @critters = Critter.all
+    @critters = Critter.all.order(:name)
   end
 
-  # GET /critters/1
-  # GET /critters/1.json
   def show
   end
 
-  # GET /critters/new
   def new
     @critter = Critter.new
+    respond_to :js
   end
 
-  # GET /critters/1/edit
   def edit
   end
 
-  # POST /critters
-  # POST /critters.json
   def create
     @critter = Critter.new(critter_params)
-
-    respond_to do |format|
-      if @critter.save
-        format.html { redirect_to @critter, notice: 'Critter was successfully created.' }
-        format.json { render :show, status: :created, location: @critter }
-      else
-        format.html { render :new }
-        format.json { render json: @critter.errors, status: :unprocessable_entity }
-      end
-    end
+    @critter.save
+    respond_to :js
   end
 
-  # PATCH/PUT /critters/1
-  # PATCH/PUT /critters/1.json
   def update
     respond_to do |format|
       if @critter.update(critter_params)
@@ -51,8 +34,6 @@ class CrittersController < ApplicationController
     end
   end
 
-  # DELETE /critters/1
-  # DELETE /critters/1.json
   def destroy
     @critter.destroy
     respond_to do |format|
@@ -62,13 +43,11 @@ class CrittersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_critter
       @critter = Critter.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def critter_params
-      params.require(:critter).permit(:name, :city, :color)
+      params.require(:critter).permit(:name, :city_id, :color)
     end
 end
