@@ -1,3 +1,4 @@
+<%= link_to 'Cancel', '', id: 'dismiss-form', class: 'btn btn-sm btn-primary right' %>
 <%= form_for(critter, remote: true) do |f| %>
   <% if critter.errors.any? %>
     <div id="error_explanation">

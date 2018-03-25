@@ -2,7 +2,7 @@ class CrittersController < ApplicationController
   before_action :set_critter, only: [:show, :edit, :update, :destroy]
 
   def index
-    @critters = Critter.all.order(:name)
+    @critters = Critter.all.order("LOWER(name)")
   end
 
   def show
@@ -14,6 +14,7 @@ class CrittersController < ApplicationController
   end
 
   def edit
+    respond_to :js
   end
 
   def create
@@ -23,23 +24,13 @@ class CrittersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @critter.update(critter_params)
-        format.html { redirect_to @critter, notice: 'Critter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @critter }
-      else
-        format.html { render :edit }
-        format.json { render json: @critter.errors, status: :unprocessable_entity }
-      end
-    end
+    @critter.update(critter_params)
+    respond_to :js
   end
 
   def destroy
     @critter.destroy
-    respond_to do |format|
-      format.html { redirect_to critters_url, notice: 'Critter was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_to :js
   end
 
   private
