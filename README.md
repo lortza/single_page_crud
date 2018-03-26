@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails 5 app using AJAX to perform all CRUD actions from the index page.
 
-Things you may want to cover:
+## App Stats
 
-* Ruby version
+- Rails 5.0.6
+- Ruby 2.4.2
+- PostgreSQL ~> 0.18
 
-* System dependencies
+## Features
 
-* Configuration
+- Main page is index of critters in a bootstrap table
+- "New Critter" button loads a form on the page and then submits data via AJAX to have new records appear on the page w/o reload
+- "Edit" button loads a form in the table under the record being edited and then submits data via AJAX to have updated records appear on the page w/o reload
+- "Delete" destroys the record via AJAX
 
-* Database creation
+## Tutorials
 
-* Database initialization
+I wrote a series of blog posts explaining how to build this app:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Part 1: New Records](http://lortza.github.io/2018/03/09/single-page-crud-p1.html)
+- [Part 2: Deleting Records](http://lortza.github.io/2018/03/16/single-page-crud-p2.html)
+- [Part 3: Editing Records](http://lortza.github.io/2018/03/23/single-page-crud-p3.html)
