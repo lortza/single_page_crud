@@ -1,3 +1,1 @@
-$('#critter-form-placeholder').html("<%= escape_javascript(render partial: 'edit' ) %>");
-
-document.getElementById("critter-form-placeholder").style.display = "block";
+$("<%= escape_javascript(render partial: 'edit') %>").insertAfter("#critter_<%= @critter.id %>");

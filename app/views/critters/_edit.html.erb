@@ -1,4 +1,6 @@
-<div class="form-holder">
-  <h3>Editing <%= @critter.name %></h3>
-  <%= render 'form', critter: @critter %>
-</div>
+<tr id="edit-form-<%= @critter.id %>" class="form-holder">
+  <td colspan='4'>
+    <%= render 'form', critter: @critter %>
+  </td>
+</tr>
+

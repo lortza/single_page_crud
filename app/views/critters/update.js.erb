@@ -1,3 +1,3 @@
 $("#critter_<%= @critter.id %>").replaceWith("<%= escape_javascript(render partial: 'critter', locals: {critter: @critter} ) %>")
 
-document.getElementById("critter-form-placeholder").style.display = "none";
+$("#edit-form-<%= @critter.id %>").remove()

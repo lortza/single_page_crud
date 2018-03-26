@@ -19,14 +19,14 @@
     </div>
 
     <div class="field col-sm-6">
-      <%#= f.label :color %>
-      <%#= f.text_field :color, class: 'form-control'  %>
+      <%= f.label :color %>
+      <%= f.text_field :color, class: 'form-control'  %>
     </div>
   </div> <!-- row -->
 
   <div class="row">
     <div class="field col-sm-12">
-      <%= f.label :city %><br>
+      <%= f.label :city %> (<%= link_to 'New City', new_city_path, remote: true %>)<br>
       <%= f.collection_radio_buttons :city_id, City.all.order(:name), :id, :name  %>
       <%#= f.collection_select :city_id, City.all.order(:name), :id, :name, class: 'form-control'  %>
     </div>
