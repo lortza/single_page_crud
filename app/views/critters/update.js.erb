@@ -1,3 +1,11 @@
-$("#critter_<%= @critter.id %>").replaceWith("<%= escape_javascript(render partial: 'critter', locals: {critter: @critter} ) %>")
+// vanilla JS version
 
-$("#edit-form-<%= @critter.id %>").remove()
+document.querySelector("#critter_<%= @critter.id %>").outerHTML = "<%= escape_javascript(render partial: 'critter', locals: {critter: @critter} ) %>"
+
+document.querySelector("#edit-form-<%= @critter.id %>").remove()
+
+// jQuery version
+
+// $("#critter_<%= @critter.id %>").replaceWith("<%= escape_javascript(render partial: 'critter', locals: {critter: @critter} ) %>")
+
+// $("#edit-form-<%= @critter.id %>").remove()

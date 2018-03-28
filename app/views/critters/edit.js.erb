@@ -1,1 +1,10 @@
-$("<%= escape_javascript(render partial: 'edit') %>").insertAfter("#critter_<%= @critter.id %>");
+// vanilla JS version
+
+document.querySelector("#critter_<%= @critter.id %>").insertAdjacentHTML('afterend', "<%= escape_javascript(render partial: 'edit') %>")
+
+
+
+// jQuery version
+
+// $("<%= escape_javascript(render partial: 'edit') %>").insertAfter("#critter_<%= @critter.id %>");
+

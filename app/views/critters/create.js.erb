@@ -1,3 +1,12 @@
-$('tbody#critters').prepend("<%= escape_javascript(render partial: 'critter', locals: {critter: @critter} ) %>");
+// vanilla javascript version
 
-document.getElementById("critter-form-placeholder").style.display = "none";
+document.querySelector('tbody#critters').insertAdjacentHTML('afterbegin', "<%= escape_javascript(render partial: 'critter', locals: {critter: @critter} ) %>");
+
+document.getElementById("new-form-placeholder").innerHTML = ""
+
+
+// jQuery version
+
+// $('tbody#critters').prepend("<%= escape_javascript(render partial: 'critter', locals: {critter: @critter} ) %>");
+
+// document.getElementById("critter-form-placeholder").style.display = "none";
