@@ -1,5 +1,5 @@
 <tr id="critter_<%= critter.id %>">
-  <td><h4><%= critter.name %></h4></td>
+  <td><h4 class="name"><%= critter.name %></h4></td>
   <td><%= display_description(critter) %></td>
   <td><%= link_to 'Edit', edit_critter_path(critter), remote: true %></td>
   <td><%= link_to 'Delete', critter, method: :delete, data: { confirm: "Are you sure you want to delete #{critter.name}? There is no undo." }, remote: true %></td>
